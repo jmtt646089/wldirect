@@ -30,7 +30,7 @@
 	"private": true,
 	"scripts": {
 		"cf-typegen": "wrangler types",
-		"deploy": "wrangler deploy",
+		"deploy": "npm i onlinepayments-sdk-nodejs && wrangler deploy",
 		"dev": "pnpm seedLocalDb && wrangler dev",
 		"predeploy": "wrangler d1 migrations apply DB --remote",
 		"schema": "npx chanfana",
