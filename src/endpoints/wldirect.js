@@ -48,3 +48,20 @@ const baseUrl = "https://payment.";
 reUrl = baseUrl + partialRedirectUrl;
 
 // perform a redirection of your customer to this URL
+
+async function main() {
+  const response = await fetch(reUrl); //, {
+   // method: 'POST',
+   // headers: {
+   //   'User-Agent': 'undici-stream-example',
+   //   'Content-Type': 'application/json',
+    //},
+    // body: JSON.stringify(body),
+  //});
+  const data = await response.json();
+  console.log(data);
+  // returns something like:
+  // { title: 'foo', body: 'bar', userId: 1, id: 101 }
+}
+
+main().catch(console.error);
