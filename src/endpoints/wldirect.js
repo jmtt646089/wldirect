@@ -65,3 +65,8 @@ async function main() {
 }
 
 main().catch(console.error);
+
+
+// In Node.js, URL redirection is handled on the server side by sending an HTTP redirect status code to 
+// the client (browser), which then navigates to the new URL. 
+// The method depends on whether you are using a web framework like Express.js or the built-in http module. 
