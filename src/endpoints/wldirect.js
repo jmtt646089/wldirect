@@ -17,6 +17,7 @@ const directSdk = onlinePaymentsSdk.init({
 });
 
 
+// get order information from front end page Button OnClick event handler function
 
 const sdkResponse = await directSdk.hostedCheckout.createHostedCheckout(
     merchantId,
@@ -24,7 +25,7 @@ const sdkResponse = await directSdk.hostedCheckout.createHostedCheckout(
         order: {
             amountOfMoney: {
                 currencyCode: "USD",
-                amount: 2345,
+                amount: 2345, // from front end form information
             },
             customer: {
                 merchantCustomerId: "1234",
@@ -48,25 +49,7 @@ const baseUrl = "https://payment.";
 reUrl = baseUrl + partialRedirectUrl;
 
 // perform a redirection of your customer to this URL
+// return reUrl to front end code by the mean of response
 
-async function main() {
-  const response = await fetch(reUrl); //, {
-   // method: 'POST',
-   // headers: {
-   //   'User-Agent': 'undici-stream-example',
-   //   'Content-Type': 'application/json',
-    //},
-    // body: JSON.stringify(body),
-  //});
-  const data = await response.json();
-  console.log(data);
-  // returns something like:
-  // { title: 'foo', body: 'bar', userId: 1, id: 101 }
-}
-
-main().catch(console.error);
-
-
-// In Node.js, URL redirection is handled on the server side by sending an HTTP redirect status code to 
-// the client (browser), which then navigates to the new URL. 
-// The method depends on whether you are using a web framework like Express.js or the built-in http module. 
+// then front end code parse the response and 
+//                     window.location.href = "https://www.example.com/new-page";
